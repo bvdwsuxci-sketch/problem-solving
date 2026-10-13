@@ -1,0 +1,75 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int fib(int n){
+	
+	if (n <= 1) return n;
+
+	vector<int> fibb(n + 1);
+	fibb[0] = 0;
+	fibb[1] = 1;
+
+	for (int i = 2; i <= n; i++) {
+		fibb[i] = fib(i - 1) + fib(i - 2);
+	}
+	return fibb[n];
+}
+
+int main()
+{
+
+	int n = 4;
+	int x= fib(n);
+	cout << x;
+
+}
+
+
+
+
+
+
+
+
+/*
+#include <iostream>
+using namespace std;
+void fib(int n)
+{
+  long long a = 0;
+  long long b = 1;
+  long long c = 0;
+  if (n == 1)
+  {
+    cout << a;
+    return;
+  }
+  if (n <= 0)
+  {
+    cout << "error";
+    return;
+  }
+  cout << '[';
+  cout << a << "," << b << ",";
+  for (int i = 2; i <= n; i++)
+  {
+    c = a + b;
+    a = b;
+    b = c;
+    if (i == n)
+      cout << c;
+    else
+      cout << c << ",";
+  }
+  cout << ']';
+}
+int main()
+{
+  cout << "enter the number :";
+  int n;
+  cin >> n;
+  cout << "the output : ";
+  fib(n);
+}
+*/
